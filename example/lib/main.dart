@@ -31,7 +31,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     _alice = Alice(
-      showNotification: true,
       showInspectorOnShake: true,
       maxCallsCount: 1000,
     );
