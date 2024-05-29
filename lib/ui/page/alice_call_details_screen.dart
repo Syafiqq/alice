@@ -72,11 +72,23 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
                 key: const Key('share_key'),
                 onPressed: () async {
                   final box = context.findRenderObject() as RenderBox?;
+                  final size = MediaQuery.of(context).size;
+                  const offset = 104;
+
+                  final fallbackSize = Size(size.width, size.height);
+                  final Size boxSize;
+                  if (size.width > 600) {
+                    boxSize = Size(size.width, size.height / 2 - offset);
+                  } else {
+                    boxSize = box?.size ?? fallbackSize;
+                  }
 
                   await Share.share(
                     await _getSharableResponseString(),
                     subject: 'Request Details',
-                    sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+                    sharePositionOrigin: box != null
+                        ? box.localToGlobal(Offset.zero) & boxSize
+                        : Rect.fromLTWH(0, 0, size.width, size.height / 2),
                   );
                 },
                 child: Icon(
