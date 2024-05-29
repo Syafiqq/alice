@@ -15,16 +15,9 @@ import 'package:http/http.dart' as http;
 export 'package:alice/model/alice_log.dart';
 
 class Alice {
-  /// Should user be notified with notification if there's new request catched
-  /// by Alice
-  final bool showNotification;
-
   /// Should inspector be opened on device shake (works only with physical
   /// with sensors)
   final bool showInspectorOnShake;
-
-  /// Icon url for notification
-  final String notificationIcon;
 
   ///Max number of calls that are stored in memory. When count is reached, FIFO
   ///method queue will be used to remove elements.
@@ -45,9 +38,7 @@ class Alice {
   /// Creates alice instance.
   Alice({
     GlobalKey<NavigatorState>? navigatorKey,
-    this.showNotification = true,
     this.showInspectorOnShake = false,
-    this.notificationIcon = '@mipmap/ic_launcher',
     this.maxCallsCount = 1000,
     this.directionality,
     this.showShareButton = true,
@@ -55,9 +46,7 @@ class Alice {
     _navigatorKey = navigatorKey ?? GlobalKey<NavigatorState>();
     _aliceCore = AliceCore(
       _navigatorKey,
-      showNotification: showNotification,
       showInspectorOnShake: showInspectorOnShake,
-      notificationIcon: notificationIcon,
       maxCallsCount: maxCallsCount,
       directionality: directionality,
       showShareButton: showShareButton,
