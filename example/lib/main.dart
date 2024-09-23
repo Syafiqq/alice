@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     _dio.interceptors.add(_alice.getDioInterceptor());
     _httpClient = HttpClient();
     _chopper = ChopperClient(
-      interceptors: [_alice.getChopperInterceptor()],
+      interceptors: [],
     );
     _postsService = PostsService.create(_chopper);
 
