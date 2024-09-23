@@ -11,21 +11,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.0.0
-  dio: ^5.1.2
-  rxdart: ^0.27.7
+  http: ^1.2.2
+  dio: ^5.7.0
+  rxdart: ^0.28.0
 
-  path_provider: ^2.0.15
-  permission_handler: ^11.0.1
-  package_info_plus: ^8.0.0
-  open_filex: ^4.3.2
+  path_provider: ^2.1.4
+  permission_handler: ^11.3.1
+  package_info_plus: ^8.0.2
+  open_filex: ^4.5.0
   sensors_plus: ^3.0.2
-  share_plus: ^8.0.3
-  collection: ^1.17.1
-  url_launcher: ^6.1.6
+  share_plus: ^10.0.2
+  collection: ^1.18.0
+  url_launcher: ^6.3.0
 
 dev_dependencies:
-  very_good_analysis: ^5.1.0
+  very_good_analysis: ^6.0.0
 
 flutter:
   plugin:
